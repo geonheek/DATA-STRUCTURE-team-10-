@@ -1,3 +1,5 @@
+import time
+​
 class Queue:
     def __init__(self):
         self.queue = []
@@ -19,6 +21,7 @@ class Queue:
             # 꺼낸 뒤 나머지 재정비
             self.queue = self.queue[1:]
             return dequeued
+        
     def size(self):
         count = len(self.queue)
         return count
@@ -26,14 +29,14 @@ class Queue:
 ​
 if __name__ == "__main__":
     q = Queue()
-    for i in range(100):
-        q.enqueue(i)
-        if (q.size() >= 10):
-          for i in range(10):
-              print(q.dequeue())
-          print("team10")    
-    
-​
-​
-    #큐 사이즈 측정
-    #시간 측정 함수 구
+    count = 0
+    start = time.time()
+    while(1):
+        msg = input('문자를 입력하시오')
+        q.enqueue(msg)
+        count += 1
+        end = time.time()
+        if(end - start > 10):
+            for i in range(count):
+                print(q.dequeue())
+            break
