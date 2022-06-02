@@ -82,7 +82,7 @@ def recv_func(conn, count, lock):
             lock.acquire()
             print(str(get_time()+ member_name_list[count]) + '님이 연결을 종료하였습니다.')
             left_member_name=member_name_list[count] # 종료한 클라이언트 닉네임 저장.
-            
+           
             received_msg_info.put([data, conn, count])
             socket_descriptor_list[count]= '-1'
             for i in range(len(whisper_list)):
