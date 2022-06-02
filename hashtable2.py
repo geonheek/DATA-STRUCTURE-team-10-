@@ -31,7 +31,7 @@ class HashTable:
     
     def print(self):
         print(self.hash_table)
-​
+
 ht = HashTable() 
 ht.insert(1, 'a') 
 ht.print() 
