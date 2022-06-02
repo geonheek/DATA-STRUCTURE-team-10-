@@ -80,7 +80,7 @@ ht.insert('ad', 'Team11')
 ht.print()
 ​
 ht.read('ad')
-​
+
 ht.delete('aa')
 ht.print()
 ht.delete('ad')
