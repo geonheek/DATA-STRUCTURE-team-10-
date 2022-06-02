@@ -102,8 +102,8 @@ mylist.append("홀길동 222 ddd")
 mylist.append("가나다 329 kkk")
 mylist.append("가나다 333 kkk")
 mylist.append("가나다 444 kkk")
-​
 mylist.printlist()
+​
 a = input()
 mylist.selectNode(a)
 print(mylist.is_empty())
