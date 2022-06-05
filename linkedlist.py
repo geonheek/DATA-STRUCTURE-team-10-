@@ -1,24 +1,24 @@
 # Node 정의
 class Node(object):
-    def __init__(self, data, next=None):
+    def __init__(self, data,  next=None):
         self.data = data
         self.next = next
-​
-​
+
+
 class LinkedList(object):
     def __init__(self):
         self.head = Node(None)
         self.size = 0
-​
+
     def listSize(self):
         return self.size
-​
+
     def is_empty(self):
         if self.size != 0:
             return False
         else:
             return True
-​
+
     def selectNode(self, idx):
         if idx >= self.size:
             print("Index Error")
@@ -30,7 +30,7 @@ class LinkedList(object):
             for cnt in range(idx):
                 target = target.next
             return target
-​
+
     # appendleft
     def appendleft(self, value):
         if self.is_empty():
@@ -38,7 +38,7 @@ class LinkedList(object):
         else:
             self.head = Node(value, self.head)
         self.size += 1
-​
+
     # append
     def append(self, value):
         if self.is_empty():
@@ -51,7 +51,7 @@ class LinkedList(object):
             newtail = Node(value)
             target.next = newtail
             self.size += 1
-​
+
     # insert
     def insert(self, value, idx):
         if self.is_empty():
@@ -69,7 +69,7 @@ class LinkedList(object):
             target.next = newNode
             newNode.next = tmp
             self.size += 1
-​
+
     # delete
     def delete(self, idx):
         if self.is_empty():
@@ -89,7 +89,7 @@ class LinkedList(object):
             target.next = target.next.next
             del (deltarget)
             self.size -= 1
-​
+
     def printlist(self):
         target = self.head
         while target:
@@ -99,24 +99,4 @@ class LinkedList(object):
             else:
                 print(target.data)
                 target = target.next
-​
-​
-mylist = LinkedList()
-mylist.append('1')
-mylist.printlist()
-mylist.append('2')
-mylist.printlist()
-mylist.append('3')
-mylist.printlist()
-mylist.insert('4', 1)
-mylist.printlist()
-mylist.appendleft('5')
-mylist.printlist()
-mylist.delete(0)
-mylist.printlist()
-mylist.delete(3)
-mylist.printlist()
-mylist.delete(0)
-mylist.printlist()
-mylist.appendleft('1')
-mylist.printlist()
+
