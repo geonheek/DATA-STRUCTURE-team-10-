@@ -1,0 +1,7 @@
+Alice 1234 23 남 무직 0810 jorino@naver.com black
+Bob asdf 25 남 취준생 0628 Bob0628@gmail.com white
+jo 0568 25 남 대학생 0810 jorino@naver.com white
+jun 12345678 20 남 0123 대학생 jun1234@gmail.com white
+go qwer123 21 남 0125 대학생 go1234@naver.com white
+ji 12awd5 21 남 0810 대학생 ji1234@naver.com white
+hee a123sf4 21 남 0234 대학생 hee123@naver.com white
