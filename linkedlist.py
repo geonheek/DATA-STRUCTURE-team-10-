@@ -30,7 +30,7 @@ class LinkedList(object):
             print("찾은 데이터 없음\n")
 
         else:
-            print(b, " 개 발견\n")
+            print(b, " 개 발견\n") 
 
 
     # append
