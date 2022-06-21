@@ -34,7 +34,7 @@ def send_func(conn, count, lock):
     msg=str(get_time()+member_name_list[count])+'님이 입장하였습니다.'
     for conn1 in socket_descriptor_list:
         if conn1 =='-1': # 연결 종료한 클라이언트 경우.
-            continue
+            continue 
         elif conn1 != conn: #자신에게는 보내지 않음.
             conn1.send(msg.encode())
         else: 
