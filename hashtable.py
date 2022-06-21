@@ -5,21 +5,23 @@ class HashTable:
         self.size = table_size
         self.hash_table = [0 for a in range(self.size)]
         
-    def getKey(self, data):
-        self.key = ord(data[0])     #ord(): 문자의 ASCII코드 리턴
+    def getKey(self, data):        
+        key_folding = 0
+        for i in range(0, len(data)):
+            key_folding += ord(data[i])  #ord(): 문자의 ASCII코드 리턴
+        self.key = key_folding     
         return self.key
     
-    def hashFunction(self, key):
+    def hashFunction(self, key):    # constant time: O(1)
         if isinstance(key, int):    # 만약 key 값이 정수형이라면
             return key % self.size   # 해시테이블 크기로 나눈 나머지를 반환
-        return int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.size  # 정수형이 아닌 값의 해싱
 
-    def getAddress(self, key):
+    def getAddress(self, key):      # constant time: O(1)
         myKey = self.getKey(key)
         hash_address = self.hashFunction(myKey)
         return hash_address
     
-    def insert(self, key, value):
+    def insert(self, key, value):  
         hash_address = self.getAddress(key)
 
         if self.hash_table[hash_address] != 0:             # 해시 충돌이 발생할 경우(해시 주소가 동일한 경우)
@@ -60,33 +62,4 @@ class HashTable:
     
     def print(self):
         print(self.hash_table)
-
-ht = HashTable(8)
-
-ht.insert('aa', 'Team10')
-ht.read('aa')
-
-data1 = 'aa'
-data2 = 'ad'
-
-print(ord(data1[0]))
-print(ord(data2[0]))
-
-"""
-아스키코드값을 테이블 크기로 나눈 값이 97으로 같으나
-체이닝을 이용하였기 때문에 충돌이 발생함에도 불구하고 value를 찾을 수 있다.
-"""
-
-ht.insert('ad', 'Team11')
-ht.print()
-
-ht.read('ad')
-
-ht.delete('aa')
-ht.print()
-print("C")
-ht.delete('ad')
-ht.print()
-print("D")
-print(ht.delete('ababa'))
 
