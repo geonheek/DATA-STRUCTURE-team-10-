@@ -129,7 +129,7 @@ def connect():
     except:
         chat_log['state'] = 'normal'
         chat_log.insert("end",'\n' + '프로그램을 정상적으로 실행할 수 없습니다.')
-        chat_log['state'] = 'disable'
+        chat_log['state'] = 'disable' 
         closed = client_sock.close()
         return
     else:
